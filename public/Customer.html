@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Customer</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel ="stylesheet" href="./index.css" type="text/css">
+        
+        
+        </head>
+    <body>
+        <header> 
+
+            <nav class="navbar navbar-inverse">
+                  <div class="container-fluid">
+                    <ul class="nav navbar-nav">
+                      <li><a href="/custom">Home</a></li>
+                      <li><a href="#">Dummy Customers</a></li>
+                    </ul>
+                    <!-- <ul class="nav navbar-nav nav navbar-right" >
+                      <li><a href="/login">Login</a></li>
+                    </ul> -->
+                  </div>
+                </nav> 
+
+
+
+  </header> 
+        
+            <div id="dummyUser"></div>
+            <div id='nav-footer'></div>
+
+
+            <script>
+            $(()=>{$('#nav-footer').load('footer.html')})
+            </script>
+
+            <script>
+
+            var display=`<h2 class='text-center'>List of Customers from Online Platforms</h2>
+                        <div id='tab' class='table-wrapper-scroll-y table-responsive custom-scrollbar'>
+                          <table class='table table-bordered table-sm mb-0'>`
+            
+                      display+=`<tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>E-mail</th>
+                            <th>Phonenumber</th>
+                            </tr>
+                            <tbody id='t-body' style='height:200px; overflow-y:auto; overflow-x:auto; width:100%'>`;
+                  
+                     for (i=1; i<11;i++){
+                      fetch('https://jsonplaceholder.typicode.com/users?id='+i)
+                      .then(response => response.json())
+                      .then(myJson =>{
+                           display+=`<tr><td>`+myJson[0].id+`</td>
+                                         <td>`+myJson[0].name+`</td>
+                                         <td>`+myJson[0].username+`</td>
+                                         <td>`+myJson[0].email+`</td>
+                                         <td>`+myJson[0].phone+`</td></tr>`
+                            
+                                 document.getElementById('dummyUser').innerHTML=display
+               
+                   
+                    })
+                      .catch(err =>{
+                          console.log(err)
+                      })
+                    }
+            
+                </script>
+         </body>
+</html>
+
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel ="stylesheet" href="./index.css" type="text/css">
+    </head>
+    <body>
+      <header> 
+
+              <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                      <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/customer">Dummy Customers</a></li>
+                        
+                      </ul>
+
+                      <ul class="nav navbar-nav nav navbar-right" >
+                        <li><a href="/login">Login</a></li>
+                      </ul>
+                    </div>
+                  </nav> 
+
+
+
+    </header>
+    <h1 style='text-align: center'><strong>Student Registration Portal</strong></h1>
+
+    <div id='hide' style='text-align: center'>
+    <h1><strong>No Registered Students!</strong>
+      <h3>There are no Registered Students. Login as an Admin to add Students</h3>
+    </h1>
+  </div>
+    <div id="homeUser"></div>
+    <div id='nav-footer'></div>
+
+
+    <script>
+    $(()=>{$('#nav-footer').load('footer.html')})
+    </script>
+
+   
+ <script>
+     $(function(){$(`[data-toggle='tooltip']`).tooltip()});
+     
+    (function display(){
+
+         var data=JSON.parse(localStorage.getItem("user"));
+         if(!data){
+                data=[];
+            }if (data.length>0){
+            var table=`<h2 class='text-center'>Registered Students</h2>
+            <div id='tab' class='table-wrapper-scroll-y table-responsive custom-scrollbar'><table class='table table-bordered table-sm mb-0' id='homeTable'>`;
+            table+=`<tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>E-mail</th>
+                <th>Gender</th>
+                <th>Level</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Action</th>
+                </tr>
+                <tbody id='t-body' style='height:200px; overflow-y:auto; overflow-x:auto; width:100%'>`;
+            for(i=0; i<data.length; i++){
+            var dat=data[i];
+            table+="<tr><td>"+dat.fname+"</td>";
+            table+="<td>"+dat.lname+"</td>";
+            table+="<td>"+dat.age+"</td>";
+            table+="<td>"+dat.email+"</td>";
+            table+="<td>"+dat.gender+"</td>";
+            table+="<td>"+dat.level+"</td>";
+            table+="<td>"+dat.phonenumber+"</td>";
+            table+="<td>"+dat.address+"</td>";
+            table+=`<td>
+                <a data-toggle='tooltip' title='You must be an Admin to Edit Contents'>
+                    <button class='btn btn-warning' style='pointer-events:none' disabled>
+                        <span class='glyphicon glyphicon-edit'></span>
+                        </button></a> 
+                        <a data-toggle='tooltip' title='You must be an Admin to Delete Contents'>
+                            <button style='pointer-events:none' class='btn btn-danger' disabled>
+                                <span class='glyphicon glyphicon-remove-circle'>
+                                    </span>
+                                    </button></td></tr>`;
+                                        }
+            table+="</tbody></table></div>";
+           
+          document.getElementById('homeUser').innerHTML=table;
+          document.getElementById('hide').style.display='none';
+
+        
+             }
+
+            
+    })()
+
+
+    </script>
+            
+            
+
+         </body>
+</html>
+

@@ -1,0 +1,107 @@
+
+ form{
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+} 
+
+
+input[type="text"]{
+    position: relative;
+    left:10px;
+}
+
+input{
+    margin: 5px;
+    padding: 2px;
+    font-family: Arial;
+    
+}
+#admin{
+    text-transform: uppercase
+}
+#tab{
+    margin-left:10%;
+    margin-right:10%;
+    margin-bottom:10%;
+
+
+}
+.panel {
+    background-color: #383638;
+}
+
+.foot{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: rgb(124, 119, 119);
+  height: 40px;
+  line-height: 20px; 
+  background-color:black;
+}
+.bg{
+    background-color: rgb(85, 79, 70);
+    color:white
+}
+.bg:hover{
+    background-color: rgb(85, 79, 70);
+    color:white
+}
+
+.table{
+    margin-top:21px;
+    margin:auto;
+    overflow:auto;
+}
+.custom-scrollbar{
+    position: relative;
+    height: 500px;
+    overflow: auto;
+    margin: 10px 10px 10px 10px;
+}
+
+.my-custom-scrollbar{
+    position: relative;
+    height: 657px;
+    overflow: auto;
+}
+
+#box{
+     top:0; 
+    right:0; 
+    float:right
+}
+
+.alert{
+    display:none;
+}
+.alert1{
+    display:none;
+}
+#show{
+    display:none;
+}
+.table-wrapper-scroll-y{
+    display: block;
+}
+
+
+.has-error input{
+    border: 1px solid red;
+}
+
+.has-error input[type='radio']{
+    border: 1px solid red;
+}
+
+
+p.parsley-error{
+    border: 1px solid red;
+}
+
+
+.tbh th:hover{
+background: linear-gradient(black ,grey,white) ;
+cursor: pointer;
+}
