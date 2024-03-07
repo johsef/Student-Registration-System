@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" type="text/css" />
+  </head>
+
+  <body>
+    <div id="nav-header"></div>
+
+    <h1 class="text-center"><strong>Student Registration Portal</strong></h1>
+    <div id="no-student" class="text-center">
+      <h2>
+        <strong>No Registered Students!</strong>
+        <h3>
+          There are no Registered Students. Login as an Admin to add Students
+        </h3>
+      </h2>
+    </div>
+    <div id="home_table"></div>
+    <div id="footer"></div>
+
+    <!-- Script files -->
+    <script>
+      $(() => {
+        $("#footer").load("../components/footer.html");
+      });
+      $(() => {
+        $("#nav-header").load("../components/nav.html");
+      });
+    </script>
+    
+    <script src="../javascript/home_table.js"></script>
+    <script src="../main.js"></script>
+    <script src="../javascript/searchTable.js"></script>
+  </body>
+</html>

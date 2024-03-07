@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log in</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../index.css" type="text/css" />
+</head>
+
+<body>
+    <div id="nav-header"></div>
+     <!-- Alerts -->
+     <div>
+        <div class="alert incorrect alert-danger alert-dismissable">
+            Username or Password Incorrect!
+        </div>
+        <div class="alert login alert-success alert-dismissable">
+            Loggged In successfully
+        </div>
+    </div>
+    <!-- End of Alerts -->
+    <section class="form-dark">
+        <div class="card">
+            <div class="card-body mx-4 mt-4">
+                <div class="text-center">
+                    <h2 class="mb-5"><strong>Admin Login</strong></h2>
+                </div>
+                <form action="/login" id="formLogin" novalidate="true" data-toggle="validator" method="POST"
+                    role="form">
+                    <div class="form-group">
+                        <div class="md-form">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" id="username" required
+                                data-error="Please Enter Username" placeholder="User Name" />
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="md-form pb-3">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control" id="password" required
+                                placeholder="Enter password" required data-error="Please Enter password" />
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-rounded z-depth-1" id="login">
+                            Log in
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div id="nav-footer"></div>
+    <script src="../javascript//login.js"></script>
+    <script>
+        $(() => {$("#nav-footer").load("../components/footer.html"); });
+        $(() => {$("#nav-header").load("../components/nav.html");});
+    </script>
+</body>
+
+</html>

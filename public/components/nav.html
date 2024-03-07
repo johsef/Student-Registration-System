@@ -1,0 +1,51 @@
+<header>
+  <nav class="navbar navbar-inverse border border-0">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/customer">Dummy Customers</a></li>
+
+        <!-- admin -->
+        <li class="admin-show"><a href="/new-student">New Student</a></li>
+      </ul>
+
+      <!-- User -->
+      <ul id="user" class="nav navbar-nav nav navbar-right">
+        <li><a href="/login">Login</a></li>
+      </ul>
+
+      <!-- Admin -->
+      <ul class="nav navbar-nav navbar-right admin-show">
+        <div class="dropdown">
+          <button class="btn bg dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <p class="admin-text">Welcome <span id='admin'></span></p>
+          </button>
+          <div class="dropdown-menu panel" aria-labelledby="dropdownMenu2">
+            <ul class="nav navbar-nav">
+              <li>
+                <a class='dropdown-item bg-secondary' href="/logout" id="logout" type="button" role='button'
+                  class="btn btn-outline-info my-4">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+
+    </div>
+  </nav>
+  <!-- Admin -->
+  <div class='alert alert-danger alert-dismissable'>Logged Out successfully</div>
+</header>
+
+<script>
+  var admin = sessionStorage.getItem("user");
+  if (admin) {
+    $(".admin-show").show();
+    $("#user").hide();
+    document.getElementById('admin').innerHTML = admin;
+  }
+  else {
+    $(".admin-show").hide();
+    $("#user").show();
+  } </script>

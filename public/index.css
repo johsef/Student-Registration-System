@@ -1,107 +1,165 @@
-
- form{
-    position: relative;
-    max-width: 500px;
-    margin: auto;
-} 
-
-
-input[type="text"]{
-    position: relative;
-    left:10px;
+form {
+  position: relative;
+  max-width: 450px;
+  margin: auto;
 }
 
-input{
-    margin: 5px;
-    padding: 2px;
-    font-family: Arial;
-    
+#formUser{
+  max-width: 550px;
+  margin: auto;
 }
-#admin{
-    text-transform: uppercase
-}
-#tab{
-    margin-left:10%;
-    margin-right:10%;
-    margin-bottom:10%;
 
-
+input[type="text"] {
+  position: relative;
 }
+
+input {
+  margin: 5px;
+  padding: 2px;
+  font-family: Arial;
+}
+#admin {
+  text-transform: uppercase;
+}
+#tab {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+}
+
+.btn-edit{
+  margin-left: 70px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: 100px;
+  padding-right: 70px;
+  padding-left: 70px
+}
+
 .panel {
-    background-color: #383638;
+  background-color: #383638;
 }
 
-.foot{
+.gender-input{
+  margin-left: 5px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   color: rgb(124, 119, 119);
   height: 40px;
-  line-height: 20px; 
-  background-color:black;
-}
-.bg{
-    background-color: rgb(85, 79, 70);
-    color:white
-}
-.bg:hover{
-    background-color: rgb(85, 79, 70);
-    color:white
+  line-height: 20px;
+  background-color: black;
+  margin-top: 30px;
 }
 
-.table{
-    margin-top:21px;
-    margin:auto;
-    overflow:auto;
-}
-.custom-scrollbar{
-    position: relative;
-    height: 500px;
-    overflow: auto;
-    margin: 10px 10px 10px 10px;
+.footer-text {
+  margin-top: 10px;
 }
 
-.my-custom-scrollbar{
-    position: relative;
-    height: 657px;
-    overflow: auto;
+.bg {
+  background-color: rgb(85, 79, 70);
+  color: white;
+  padding-top: 5px;
+  margin-top: 3px;
+  padding-bottom: 11px;
 }
 
-#box{
-     top:0; 
-    right:0; 
-    float:right
+.admin-text{
+  margin-bottom: 0px;
 }
 
-.alert{
-    display:none;
-}
-.alert1{
-    display:none;
-}
-#show{
-    display:none;
-}
-.table-wrapper-scroll-y{
-    display: block;
+#t-body{
+  height:200px;
+  overflow-y:auto;
+  width:100%;
 }
 
-
-.has-error input{
-    border: 1px solid red;
+.bg:hover {
+  background-color: rgb(63, 57, 50);
+  color: white;
 }
 
-.has-error input[type='radio']{
-    border: 1px solid red;
+.bg:focus{
+  color: white
+}
+.table {
+  margin-top: 21px;
+  margin: auto;
+  overflow: auto;
+}
+.custom-scrollbar {
+  position: relative;
+  height: 500px;
+  overflow: auto;
+  margin: 10px 10px 10px 10px;
 }
 
-
-p.parsley-error{
-    border: 1px solid red;
+.my-custom-scrollbar {
+  position: relative;
+  height: 657px;
+  overflow: auto;
 }
 
+.input-search{
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
-.tbh th:hover{
-background: linear-gradient(black ,grey,white) ;
-cursor: pointer;
+#search{
+  width: 25%;
+  margin-left: 0;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#box {
+  top: 0;
+  right: 0;
+  float: right;
+}
+
+#login {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.alert {
+  display: none;
+}
+.alert1 {
+  display: none;
+}
+#show {
+  display: none;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+.has-error input {
+  border: 1px solid red;
+}
+
+.has-error input[type="radio"] {
+  border: 1px solid red;
+}
+
+p.parsley-error {
+  border: 1px solid red;
+}
+
+.tbh th:hover {
+  background: linear-gradient(rgb(136, 131, 131), rgb(166, 157, 157));
+  cursor: pointer;
+}
+
+.navbar-inverse {
+  background-color: black;
+  border-radius: 0px;
 }

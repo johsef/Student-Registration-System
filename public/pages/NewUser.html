@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New User</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../index.css" type="text/css">
+</head>
+
+<body>
+  <div id="nav-header"></div>
+  <div id='showForm'>
+    <h4 class="card-header text-center">
+      <strong>Fill in Student details</strong>
+    </h4>
+
+    <div class="card-body">
+      <form name='formUser' id='formUser' role='form' data-toggle='validator'
+        novalidate='true'>
+        <div class="form-group">
+          <label for="fName" class="col-sm-3 col-form-label">First Name:</label>
+          <div class="col-sm-9">
+            <input class="form-control" id="fName" placeholder="First Name" type="text" name="first_name" required
+              data-error='Please enter your first name.'>
+            <div class='help-block with-errors'></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="lName" class="col-sm-3 col-form-label">Last Name:</label>
+          <div class="col-sm-9">
+            <input class="form-control" id="lName" placeholder="Last Name" type="text" name="last_name" required
+              data-error='Please enter your last name.'>
+            <div class='help-block with-errors'></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 col-form-label" for="age"> Age:</label>
+          <div class="col-sm-9">
+            <input class="form-control" id="age" placeholder="Enter your age" type="number" name="age" required min="1" max="40"
+              data-error='Please enter your age.' />
+            <div class='help-block with-errors'></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="col-sm-3 col-form-label">E-mail</label>
+          <div class="col-sm-9">
+            <input type="email" name="email" id="email" placeholder="E-mail address" pattern="[^@\s]+@[^@\s]+"
+              class="form-control" required data-error='Please enter a valid E-mail address'>
+            <div class='help-block with-errors'></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 col-form-label">Gender:</label>
+          <div class="col-sm-8 gender-input">
+            <label for="rad_male"> Male <input id='rad_male' type="radio" name="gender" value="Male"
+                required></label>
+            <label for="rad_female">Female <input id='rad_female' type="radio" name="gender" value="Female"
+               required>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="label" class="col-sm-3 col-form-label">Current Level:</label>
+          <div class="col-sm-9">
+            <input id="level" type="number" name="level" class="form-control" min="100" max="500" step="100" size="3"
+              required data-error='Enter your level between 100-500' />
+            <div class='help-block with-errors'></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pnumber" class="col-sm-3 col-form-label">Phone Number </label>
+          <div class="col-sm-9">
+            <input type="tel" id="pnumber" name="phonenumber" class="form-control" pattern="^[0-9-+s()]*$"
+              placeholder="Telephone number" maxlength='11' required data-error='Please enter your phone number'>
+            <div class='help-block with-errors'></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address" class="col-sm-3 col-form-label">Address: </label>
+          <div class="col-sm-9">
+            <textarea name="address" id="address" rows="3" class="form-control" cols="30"
+              placeholder="Enter your address here." required data-error='Enter your Address'></textarea>
+            <div class='help-block with-errors'></div>
+          </div>
+        </div>
+
+        <button id="add" type="button" class="btn btn-primary btn-outline-info btn-edit">Add</button>
+        <button id="update" type="button" class="btn btn-success btn-outline-info btn-edit"
+          style='display:none'>Update</button>
+    </div>
+    </form>
+
+  </div>
+
+  <div id='nav-footer'></div>
+  <script>
+    $(() => { $('#nav-footer').load('../components/footer.html') })
+    $(() => { $('#nav-header').load('../components/nav.html') })
+  </script>
+  <!-- <script src="../javascript/addTable.js"></script> -->
+  <!-- <script src="../javascript/editTable.js"></script> -->
+  <script src="../javascript/initialize_form.js"></script>
+  <script src="../main.js"></script>
+
+</body>
+</html>
